@@ -25,22 +25,22 @@ public class Index {
         return "post";
     }
 
-    @RequestMapping(value = "/login",method = RequestMethod.POST )
-    public Object login(@RequestBody Account account) throws Exception{
-        System.out.println(account + "请求的数据是什么呢++++++++++++++++++++++++++++++++++");
-        System.out.println(account.getUserName().equals("admin"));
-        if(account.getUserName().equals("admin")){
-            if(account.getPassword().equals("123456")){
-                String jwt = JWTUtils.generateToken(account.getUserName());
-                HashMap<String, String> map= new HashMap<>();
-                map.put("token", jwt);
-                return map;
-            }
-        }else {
-            return "error token";
-        }
-       return "Object";
-    }
+//    @RequestMapping(value = "/login",method = RequestMethod.POST )
+//    public Object login(@RequestBody Account account) throws Exception{
+//        System.out.println(account + "请求的数据是什么呢++++++++++++++++++++++++++++++++++");
+//        System.out.println(account.getUserName().equals("admin"));
+//        if(account.getUserName().equals("admin")){
+//            if(account.getPassword().equals("123456")){
+//                String jwt = JWTUtils.generateToken(account.getUserName());
+//                HashMap<String, String> map= new HashMap<>();
+//                map.put("token", jwt);
+//                return map;
+//            }
+//        }else {
+//            return "error token";
+//        }
+//       return "Object";
+//    }
 
     @RequestMapping(value = "/api/user/{id}")
     public Results find(@PathVariable Long id) {

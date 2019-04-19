@@ -1,7 +1,7 @@
 package com.example.demo.domain;
 
 public class Account {
-
+    public int id;
     public String userName;
     public String password;
 
@@ -10,6 +10,14 @@ public class Account {
     public Account(String userName, String password){
         this.userName = userName;
         this.password = password;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUserName() {
