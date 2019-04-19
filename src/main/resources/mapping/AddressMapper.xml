@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.AddressMapper">
+
+    <resultMap id="AddressResultAll" type="com.example.demo.domain.Address">
+        <result column="id" jdbcType="INTEGER" property="id"></result>
+        <result column="province" jdbcType="VARCHAR" property="province"></result>
+        <result column="city" jdbcType="VARCHAR" property="city"></result>
+    </resultMap>
+
+    <select id="find" resultType="Address" resultMap="AddressResultAll">
+        select * from address where id= #{id}
+    </select>
+
+</mapper>
