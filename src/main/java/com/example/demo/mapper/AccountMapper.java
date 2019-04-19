@@ -8,4 +8,10 @@ public interface AccountMapper {
 
     public Account loginAccount(Account account);
 
+    public int InsertAccount(Account account);
+
+    public int DeleteAccount(int id);
+
+    public int updateAccount(Account account,int id);
+
 }

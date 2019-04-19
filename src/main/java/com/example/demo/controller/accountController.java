@@ -33,4 +33,27 @@ public class AccountController {
 
     }
 
+    @RequestMapping(value = "/api/insertAccount", method = RequestMethod.POST)
+    public Results InsertAccount(@RequestBody Account account) {
+        int account1 =accountService.InsertAccount(account);
+        System.out.println(account1);
+        return new Results(1,"success");
+    }
+
+    @RequestMapping(value = "/api/deleteAccount/{id}", method = RequestMethod.DELETE)
+    public Results deleteAccount(@PathVariable int id) {
+        int del =  accountService.DeleteAccount(id);
+        return new Results(1, "success");
+    }
+
+    @RequestMapping(value = "/api/updateAccount/{id}", method = RequestMethod.POST)
+    public Results updateAccount(@RequestBody Account account, @PathVariable int id) {
+
+        System.out.println(id);
+        System.out.println(account);
+        System.out.println("--------------------------------------");
+
+        int update = accountService.updateAccount(account, id);
+        return new Results(1, "success");
+    }
 }

@@ -11,4 +11,18 @@
     <select id="loginAccount" resultMap="loginAccountToken" resultType="com.example.demo.domain.Account">
         select * from account where user_name = #{userName} and password=#{password}
     </select>
+
+    <insert id="InsertAccount" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.demo.domain.Account">
+        insert into account (user_name, password) values (#{userName},#{password})
+    </insert>
+
+    <delete id="DeleteAccount">
+        delete from account where id=#{id}
+    </delete>
+
+    <update id="updateAccount">
+        update account set user_name=#{userName}, password=#{password} where id=#{id}
+    </update>
+
+
 </mapper>

@@ -12,6 +12,7 @@ import java.util.HashMap;
 
 
 @RestController
+@RequestMapping(value = "/api/user")
 public class Index {
     @Autowired
     private UserVervice userVervice;
@@ -42,7 +43,7 @@ public class Index {
 //       return "Object";
 //    }
 
-    @RequestMapping(value = "/api/user/{id}")
+    @RequestMapping(value = "/{id}")
     public Results find(@PathVariable Long id) {
         User userWithAddress = userVervice.find(id);
         if(userWithAddress == null) {
