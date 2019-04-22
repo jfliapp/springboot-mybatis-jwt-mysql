@@ -12,6 +12,6 @@ public interface AccountMapper {
 
     public int DeleteAccount(int id);
 
-    public int updateAccount(Account account,int id);
+    public int updateAccount(String username, String password, int id);
 
 }

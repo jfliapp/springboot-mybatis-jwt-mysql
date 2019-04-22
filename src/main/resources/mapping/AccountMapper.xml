@@ -21,7 +21,7 @@
     </delete>
 
     <update id="updateAccount">
-        update account set user_name=#{userName}, password=#{password} where id=#{id}
+        update account set user_name=#{param1}, password=#{param2} where id=#{param3}
     </update>
 
 

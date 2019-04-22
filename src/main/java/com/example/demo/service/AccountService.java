@@ -26,7 +26,7 @@ public class AccountService {
     }
 
     public int updateAccount(Account account, int id) {
-        int update = accountMapper.updateAccount(account, id);
+        int update = accountMapper.updateAccount(account.getUserName(), account.getPassword(),id);
         return update;
     }
 }
