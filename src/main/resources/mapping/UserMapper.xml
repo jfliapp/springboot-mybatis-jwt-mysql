@@ -21,7 +21,6 @@
         </collection>
     </resultMap>
 
-
     <select id="find" parameterType="Long" resultType="com.example.demo.domain.User" resultMap="resultUserAll">
         select user.*, car.id "cid", car.*,address.id "address-id",address.* from user,car,address where user.id=car.user_id  and user.address_id = address.id and  user.id=#{id}
     </select>
